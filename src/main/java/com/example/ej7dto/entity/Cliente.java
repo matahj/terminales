@@ -10,6 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
+
 @Entity
 @Table(name = "clientes")
 public class Cliente {
@@ -22,5 +23,4 @@ public class Cliente {
     private String correo;
     @Column(name = "password", nullable = false)
     private String password;
-
 }

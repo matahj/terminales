@@ -6,7 +6,7 @@ import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.CONSTRUCTOR)
-public interface ClienteMapper {
+public interface IClienteMapper {
     ClienteDTO toDTO(Cliente cliente);
     Cliente toEntity(ClienteDTO clienteDTO);
 }
