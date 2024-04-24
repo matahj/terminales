@@ -6,9 +6,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IBoletoService {
+    BoletoDTO save(BoletoDTO boletoDTO);
     List<BoletoDTO> findAll();
     Optional<BoletoDTO> findById(long id);
-    BoletoDTO save(BoletoDTO boletoDTO);
     BoletoDTO update(long id, BoletoDTO boletoDTO);
     void delete(long id);
 }
+

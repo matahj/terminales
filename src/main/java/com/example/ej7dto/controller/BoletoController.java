@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/boletos")
+@RequestMapping("/v1")
 public class BoletoController {
 
     private IBoletoService boletoService;
@@ -16,12 +16,12 @@ public class BoletoController {
         this.boletoService = boletoService;
     }
 
-    @PostMapping("/")
+    @PostMapping("/boletos")
     public BoletoDTO save(@RequestBody BoletoDTO boletoDTO) {
         return boletoService.save(boletoDTO);
     }
 
-    @GetMapping("/")
+    @GetMapping("/boletos")
     public List<BoletoDTO> findAll() {
         return boletoService.findAll();
     }

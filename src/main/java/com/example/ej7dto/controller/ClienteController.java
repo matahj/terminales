@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping("/v1")
 public class ClienteController {
 
     private IClienteService clienteService;
@@ -16,12 +16,12 @@ public class ClienteController {
         this.clienteService = clienteService;
     }
 
-    @PostMapping("/")
+    @PostMapping("/clientes")
     public ClienteDTO save(@RequestBody ClienteDTO clienteDTO){
         return clienteService.save(clienteDTO);
     }
 
-    @GetMapping("/")
+    @GetMapping("/clientes")
     public List<ClienteDTO> findAll(){
         return clienteService.findAll();
     }
