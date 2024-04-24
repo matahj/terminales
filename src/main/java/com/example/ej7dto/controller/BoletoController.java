@@ -26,4 +26,14 @@ public class BoletoController {
         return boletoService.findAll();
     }
 
+    @PutMapping("/boletos/{id}")
+    public void update(@PathVariable("id") long id, @RequestBody BoletoDTO boletoDTO) {
+        boletoService.update(id, boletoDTO);
+    }
+
+    @DeleteMapping("/boletos/{id}")
+    public void delete(@PathVariable("id") long id) {
+        boletoService.delete(id);
+    }
+
 }

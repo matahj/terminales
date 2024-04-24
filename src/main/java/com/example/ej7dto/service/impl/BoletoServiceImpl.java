@@ -44,8 +44,7 @@ public class BoletoServiceImpl implements IBoletoService {
     }
 
     @Override
-    public BoletoDTO update(long id, BoletoDTO boletoDTO) {
-        return null;
+    public void update(long id, BoletoDTO boletoDTO) {
     }
 
     @Override

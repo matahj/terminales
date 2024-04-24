@@ -9,7 +9,7 @@ public interface IBoletoService {
     BoletoDTO save(BoletoDTO boletoDTO);
     List<BoletoDTO> findAll();
     Optional<BoletoDTO> findById(long id);
-    BoletoDTO update(long id, BoletoDTO boletoDTO);
+    void update(long id, BoletoDTO boletoDTO);
     void delete(long id);
 }
 
