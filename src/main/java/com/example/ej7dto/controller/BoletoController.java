@@ -26,8 +26,10 @@ public class BoletoController {
         return boletoService.findAll();
     }
 
+
+
     @PutMapping("/boletos/{id}")
-    public void update(@PathVariable("id") long id, @RequestBody BoletoDTO boletoDTO) {
+    public void update(@PathVariable("id") long id, @RequestBody BoletoDTO boletoDTO) throws Exception{
         boletoService.update(id, boletoDTO);
     }
 

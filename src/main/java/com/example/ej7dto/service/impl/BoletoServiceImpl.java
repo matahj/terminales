@@ -44,11 +44,18 @@ public class BoletoServiceImpl implements IBoletoService {
     }
 
     @Override
-    public void update(long id, BoletoDTO boletoDTO) {
+    public void update(long id, BoletoDTO boletoDTO) throws Exception{
+        Optional<Boleto> resultado = boletoRepository.findById(id);
+        if (resultado.isEmpty()) {
+            throw new Exception("El curso no existe");
+        }
+        Boleto boleto = resultado.get();
+        boleto.setNumeroAsiento(boletoDTO.getNumeroAsiento());
+        boletoRepository.save(boleto);
     }
 
     @Override
     public void delete(long id) {
-
+        boletoRepository.deleteById(id);
     }
 }
