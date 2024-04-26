@@ -39,15 +39,20 @@ public class BoletoServiceImpl implements IBoletoService {
     }
 
     @Override
-    public Optional<BoletoDTO> findById(long id) {
-        return null;
+    public BoletoDTO findById(long id) throws Exception{
+        Optional<Boleto> resultado = boletoRepository.findById(id);
+        if (resultado.isEmpty()) {
+            throw new Exception("El boleto no existe");
+        }
+        Boleto boleto = resultado.get();
+        return boletoMapper.toDTO(boleto);
     }
 
     @Override
     public void update(long id, BoletoDTO boletoDTO) throws Exception{
         Optional<Boleto> resultado = boletoRepository.findById(id);
         if (resultado.isEmpty()) {
-            throw new Exception("El curso no existe");
+            throw new Exception("El boleto no existe");
         }
         Boleto boleto = resultado.get();
         boleto.setNumeroAsiento(boletoDTO.getNumeroAsiento());

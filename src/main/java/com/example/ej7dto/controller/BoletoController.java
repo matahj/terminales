@@ -26,7 +26,10 @@ public class BoletoController {
         return boletoService.findAll();
     }
 
-
+    @GetMapping("/boletos/{id}")
+    public BoletoDTO findById(@PathVariable("id") long id) throws Exception{
+        return boletoService.findById(id);
+    }
 
     @PutMapping("/boletos/{id}")
     public void update(@PathVariable("id") long id, @RequestBody BoletoDTO boletoDTO) throws Exception{

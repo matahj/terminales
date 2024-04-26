@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface IBoletoService {
     BoletoDTO save(BoletoDTO boletoDTO);
     List<BoletoDTO> findAll();
-    Optional<BoletoDTO> findById (long id) throws Exception;
+    BoletoDTO findById (long id) throws Exception;
     void update(long id, BoletoDTO boletoDTO) throws Exception;
     void delete(long id);
 }
