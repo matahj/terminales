@@ -3,6 +3,7 @@ package com.example.ej7dto.controller;
 import com.example.ej7dto.dto.BoletoDTO;
 import com.example.ej7dto.dto.ClienteDTO;
 import com.example.ej7dto.service.IBoletoService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,6 +24,7 @@ public class BoletoController {
 
     @GetMapping("/boletos")
     public List<BoletoDTO> findAll() {
+
         return boletoService.findAll();
     }
 
