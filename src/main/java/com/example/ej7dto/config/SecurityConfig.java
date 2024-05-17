@@ -17,8 +17,8 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
 public class SecurityConfig {
 
-    @Value("${spring.security.debug:false}")
-    boolean securityDebug;
+//    @Value("${spring.security.debug:false}")
+//    boolean securityDebug;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
@@ -44,10 +44,10 @@ public class SecurityConfig {
         return http.build();
     }
 
-    @Bean
-    public WebSecurityCustomizer webSecurityCustomizer(){
-        return (web) -> web.debug(securityDebug)
-                .ignoring()
-                .requestMatchers("/css/**","/img/**");
-    }
+//    @Bean
+//    public WebSecurityCustomizer webSecurityCustomizer(){
+//        return (web) -> web.debug(securityDebug)
+//                .ignoring()
+//                .requestMatchers("/css/**","/img/**");
+//    }
 }

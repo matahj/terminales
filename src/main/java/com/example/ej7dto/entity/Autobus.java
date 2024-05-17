@@ -12,15 +12,15 @@ import lombok.Setter;
 @Getter
 
 @Entity
-@Table(name = "clientes")
-public class Cliente {
+@Table(name = "autobuses")
+public class Autobus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "nombre", nullable = false)
-    private String nombre;
-    @Column(name = "correo", nullable = false, unique = true)
-    private String correo;
-    @Column(name = "password", nullable = false)
-    private String password;
+    @Column(name = "matricula", nullable = false, unique = true)
+    private String matricula;
+    @Column(name = "clase", nullable = false)
+    private String clase;
+    @Column(name = "numero_asientos", nullable = false)
+    private int numeroAsientos;
 }

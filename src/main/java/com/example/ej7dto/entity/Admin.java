@@ -19,9 +19,8 @@ public class Admin {
     private long id;
     @Column(name = "nombre", nullable = false)
     private String nombre;
-    @Column(name = "correo", nullable = false)
+    @Column(name = "correo", nullable = false, unique = true)
     private String correo;
     @Column(name = "password", nullable = false)
     private String password;
-    private String rol;
 }

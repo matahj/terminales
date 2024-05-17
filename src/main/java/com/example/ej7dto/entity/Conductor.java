@@ -12,8 +12,8 @@ import lombok.Setter;
 @Getter
 
 @Entity
-@Table(name = "clientes")
-public class Cliente {
+@Table(name = "conductores")
+public class Conductor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -21,6 +21,4 @@ public class Cliente {
     private String nombre;
     @Column(name = "correo", nullable = false, unique = true)
     private String correo;
-    @Column(name = "password", nullable = false)
-    private String password;
 }
